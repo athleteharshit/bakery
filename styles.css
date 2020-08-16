@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css?family=Niconne&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Teko:300,400&display=swap');
+
+a {
+    color: white !important;
+}
+
+p {
+    margin: 0%;
+}
+
+section {
+    padding: 60px 0;
+}
+
+/* Header section  */
+header {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(16, 29, 44, 0.95), rgba(16, 29, 44, 0.95)), url("images/header-bg.jpg") no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+
+header > .container {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    height: 100vh;
+}
+
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    max-width: 100px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 650ms;
+}
+
+.navbar-brand:hover {
+    opacity: 0.8;
+}
+
+.hamburger-menu {
+    position: fixed;
+    top: 25px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    background-color: #101d2c;
+    border-radius: 4px;
+    z-index: 999;
+}
+
+.hamburger-menu i {
+    color: rgba(198, 153, 99, .71);
+    font-size: 30px;
+    margin: auto;
+}
+
+.hamburger-menu .fa-times {
+    display: none;
+}
+
+.hamburger-menu .fa-times.open {
+    display: block;
+}
+
+.hamburger-menu .fa-bars.open {
+    display: none;
+}
+
+.nav-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #101d2c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 900;
+    transform: scale(0);
+    opacity: 0;
+    transition: opacity 650ms;
+    list-style: none;
+}
+
+.nav-list.open {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hero-text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    text-align: center;
+}
+
+.hero-text h1 {
+    color: #c69963;
+    font-family: "Niconne", cursive;
+}
+
+.btn {
+    border: 1px solid #c69963;
+    width: 100px;
+    padding: 5px 0 !important;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.btn::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .3), transparent);
+    transition: left 650ms;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+/* End header section  */
+
+
+/* About Section  */
+.section-heading h4 {
+    text-transform: uppercase;
+    line-height: 0;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-family: 'Teko', sans-serif;
+    color: #101d2c;
+}
+
+.section-heading h1 {
+    color: #c69963;
+    font-family: 'Niconna', cursive;
+}
+
+.about .btn {
+    width: 150px;
+    color: #c69963 !important;
+    transition: background-color 650ns;
+}
+
+.about .btn:hover {
+    background-color: #c69963;
+    color: #fff !important;
+}
+/* End About section  */
+
+/* Contact section */
+.menu {
+    background-color: #101d2c;
+}   
+
+.shop-info i {
+    font-size: 50px;
+    color: #c69963;
+}
+
+.shop-info h1 {
+    font-size: 25px;
+    font-weight: 300;
+    font-family: 'Teko', sans-serif;
+    text-transform: uppercase;
+}
+
+.shop-info p,
+.shop-info address {
+    color: rgba(255, 255, 255, .3);
+}
+
+hr {
+    border-top: 1px solid rgba(255, 255, 255, .3);
+}
+/* <!-- End Contact section  --> */
+    
+
+/* Media query  */
+@media only screen and (min-width: 576px) {
+    .navbar-brand {
+        max-width: 150px;
+    }
+
+    .hamburger-menu {
+        top: 35px;
+        right: 25px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .btn {
+        width: 150px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    header > .container {
+        padding: 0 15px;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    .navbar-brand {
+        position: initial;
+        transform: initial;
+    }
+
+    .nav-list {
+        position: initial;
+        width: initial;
+        height: initial;
+        opacity: initial;
+        background-color: initial;
+        transform: initial;
+        transition: initial;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-item {
+        margin: 0 30px;
+    }
+
+    .nav-item:last-child {
+        margin-right: 0;
+    } 
+
+    .nav-link {
+        position: relative;
+        padding: 0;
+    }
+
+    .nav-link::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: #c69963;
+        bottom: -3px;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 650ms;
+    }
+
+    .nav-link:hover::before {
+        transform: scaleX(1);
+    }
+}
